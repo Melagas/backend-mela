@@ -1,52 +1,49 @@
-class Usuario {
-    constructor(nombre, apellido, libros, mascotas) {
-        this.nombre = nombre,
-            this.apellido = apellido,
-            this.libros = libros,
-            this.mascotas = mascotas
+class User {
+    constructor(name, surname, books, pets) {
+        this.name = name,
+            this.surname = surname,
+            this.books = books,
+            this.pets = pets
     }
     getFullName(){
-        return `El nombre de usuario completo es ${this.nombre} ${this.apellido}`
+        return `El nombre de usuario completo es ${this.name} ${this.surname}`
     }
-    addMascotas(){
-        return usuario.mascotas.push(nuevaMascota)
+    addMascotas(pet){
+        return user.pets.push(pet)
     }
     countMascotas(){
-        return `${usuario.mascotas.length}`
+        return `${user.pets.length}`
     }
-    addBook(){
-        return usuario.libros.push({nombres:libro, autor:autor});
+    addBook(book,author){
+        return user.books.push({names:book,author:author});
     }
     getBookNames(){
-        return this.libros.map(libro=>libro.nombres);
+        return this.books.map(book=>book.names);
         }
 }
 
-const usuario = new Usuario("Gaston", "Mela",
+const user = new User("Gaston", "Mela",
     [{
-            "nombres": "arboles nativos",
-            "autor": "jose"
+            "names": "arboles nativos",
+            "author": "jose"
         },
         {
-            "nombres": "comida saludable",
-            "autor": "juan"
+            "names": "comida saludable",
+            "author": "juan"
         },
         {
-            "nombres": "islas misteriosas",
-            "autor": "pedro"
+            "names": "islas misteriosas",
+            "author": "pedro"
         }
     ],
     ["perro", " gato", " pez"]);
 
-const libro = ("habia una vez")
-const autor = ("tomas")
-const nuevaMascota = ("rana");
+user.addBook('habia una vez','tomas');
+user.addMascotas('hamster')
 
-console.log(usuario.getFullName());
-console.log(usuario.addMascotas());
-console.log(usuario.countMascotas());
-console.log(usuario.addBook());
-console.log(usuario.getBookNames());
+console.log(user.getFullName());
+console.log(user.countMascotas());
+console.log(user.getBookNames());
 
 
 
