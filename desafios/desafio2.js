@@ -43,15 +43,15 @@ class Contenedor {
 
     }
 
-    async deleteAll(){
-        try{
-            await fs.promises.unlink('productos.txt', 'utf-8')
-            console.log('Datos borrados')
-        }
-        catch(err){
-            console.log('Error al borrar datos')
-        }
-    }
+    // async deleteAll(){
+    //     try{
+    //         await fs.promises.unlink('productos.txt', 'utf-8')
+    //         console.log('Datos borrados')
+    //     }
+    //     catch(err){
+    //         console.log('Error al borrar datos')
+    //     }
+    // }
 }
 
 const productos = new Contenedor ([{
