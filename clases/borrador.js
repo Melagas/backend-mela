@@ -119,3 +119,15 @@
 
 // producto.save();
 // console.log(producto.getById());
+
+//Funciona
+  // async getAll(){
+    //     try{
+    //         await fs.promises.readFile('productos.txt', 'utf-8')
+    //         console.log(data)
+    //     }
+    //     catch(err){
+    //         console.log('Error de lectura',err)
+    //     }
+
+    // }

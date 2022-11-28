@@ -1,80 +1,79 @@
 const fs = require('fs')
-
-const data = fs.readFileSync('./productos.txt', 'utf-8')
-
-class Contenedor {
-    constructor (productos){
-    this.data = data
-    this.productos = productos
-
-    }
-    async save(){
-        try{
-           await fs.promises.writeFile('./productos.txt', JSON.stringify(productos, null, 3))
+const desafio = async () => {
+    class Contenedor {
+        constructor (fileName,productos=[],id=0){
+        this.productos = productos
+        this.fileName = fileName
+        this.id = id
+    
         }
-        catch(err){
-            console.log(err)
+        async save(producto){
+            try{
+            this.productos.push({  
+                id: this.id += 1,
+                ...producto
+            })
+             await fs.promises.writeFile(`./${this.fileName}.txt`, JSON.stringify(this.productos, null, 2))
+            }
+             catch(err){
+                console.log(err)
+            }
         }
-    }
-
-    // async getById(){
-    //     try{
-    //         await fs.promises.readFile('productos.txt', 'utf-8')
-    //         console.log(this.data.map(productos=>productos.id))
-    //     }
-    //     catch(err){
-    //         console.log(err)
-    //     }
-
-    // }
-
-    async getAll(){
-        try{
-            await fs.promises.readFile('productos.txt', 'utf-8')
-            console.log(data)
+    
+        async getById(numero){
+            try{ 
+                const numberFound = this.productos.find(producto=>producto.id === numero)
+                if (numberFound){
+                    return numberFound
+                }else {
+                    return null
+                }
+            }
+            catch(err){
+                console.log(err)
+            }
+    
         }
-        catch(err){
-            console.log('Error de lectura',err)
+    
+        async getAll(){
+            const content = this.productos;
+            return content;
         }
-
+    
+        async deleteById(id){
+                this.productos = this.productos.filter(producto => producto.id !== id);
+                await fs.promises.writeFile(`./${this.fileName}.txt`, JSON.stringify(this.productos, null, 2));
+        }
+    
+        async deleteAll(){
+            try{
+                await fs.promises.writeFile(`./${this.fileName}.txt`, this.productos = [], 'utf-8')
+                console.log('Datos borrados')
+            }
+            catch(err){
+                console.log('Error al borrar datos')
+            }
+        }
+       
     }
-
-    async deleteById(){
-
-    }
-
-    // async deleteAll(){
-    //     try{
-    //         await fs.promises.unlink('productos.txt', 'utf-8')
-    //         console.log('Datos borrados')
-    //     }
-    //     catch(err){
-    //         console.log('Error al borrar datos')
-    //     }
-    // }
+    
+    const producto = new Contenedor ('stock')
+    
+    const obj = {
+        name:'Mouse',
+        price: 1000,
+        thumbnail: 'image.png'
+    };
+    
+    
+    await producto.save(obj);
+    await producto.save(obj);
+    await producto.save(obj);
+    console.log(await producto.getById(2));
+    console.log(producto.getAll());
+    //await producto.deleteById(3);
+    //producto.deleteAll();
 }
-
-const productos = new Contenedor ([{
-    name: 'Teclado',
-    price: 2000,
-    thumbnail: 'image.png',
-    id: 1,
-},
-{
-    name: 'Mouse',
-    price: 1000,
-    thumbnail: 'image.png',
-    id:2
-},
-{
-    name: 'Camara',
-    price: 500,
-    thumbnail: 'image.png',
-    id:3
-}])
+desafio();
 
 
-productos.save();
-productos.getAll();
-//productos.getById();
-//productos.deleteAll();
