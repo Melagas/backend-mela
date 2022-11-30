@@ -70,7 +70,7 @@ const desafio = async () => {
     await producto.save(obj);
     await producto.save(obj);
     console.log(await producto.getById(2));
-    console.log(producto.getAll());
+    console.log(await producto.getAll());
     //await producto.deleteById(3);
     //producto.deleteAll();
 }
