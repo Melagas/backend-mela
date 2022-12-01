@@ -19,6 +19,16 @@ const desafio = async () => {
                 console.log(err)
             }
         }
+
+        async leer(){
+            try {
+                const prods = await this.fs.promises.readFile(this.productos, 'utf-8')
+                return JSON.parse(prods)
+            }
+            catch(error){
+                return []
+            }
+        }
     
         async getById(numero){
             try{ 
@@ -64,11 +74,23 @@ const desafio = async () => {
         price: 1000,
         thumbnail: 'image.png'
     };
+
+    const obj2 = {
+        name:'Teclado',
+        price: 2000,
+        thumbnail: 'image.png'
+    }
+
+    const obj3 = {
+        name:'Escritorio',
+        price: 3000,
+        thumbnail: 'image.png'
+    }
     
     
     await producto.save(obj);
-    await producto.save(obj);
-    await producto.save(obj);
+    await producto.save(obj2);
+    await producto.save(obj3);
     console.log(await producto.getById(2));
     console.log(await producto.getAll());
     //await producto.deleteById(3);
@@ -77,3 +99,4 @@ const desafio = async () => {
 desafio();
 
 
+module.exports = desafio();
