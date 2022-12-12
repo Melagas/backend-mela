@@ -1,38 +1,28 @@
 const fs = require('fs')
-const desafio = async () => {
-    class Contenedor {
-        constructor (fileName,productos=[],id=0){
-        this.productos = productos
+
+    class Conteiner {
+        constructor (fileName,products=[],id=0){
+        this.products = products
         this.fileName = fileName
         this.id = id
     
         }
-        async save(producto){
+        async save(product){
             try{
-            this.productos.push({  
+            this.products.push({  
                 id: this.id += 1,
-                ...producto
+                ...product
             })
-             await fs.promises.writeFile(`./${this.fileName}.txt`, JSON.stringify(this.productos, null, 2))
+             await fs.promises.writeFile(`./${this.fileName}.txt`, JSON.stringify(this.products, null, 2))
             }
              catch(err){
                 console.log(err)
             }
         }
-
-        async leer(){
-            try {
-                const prods = await this.fs.promises.readFile(this.productos, 'utf-8')
-                return JSON.parse(prods)
-            }
-            catch(error){
-                return []
-            }
-        }
-    
-        async getById(numero){
+        
+        async getById(number){
             try{ 
-                const numberFound = this.productos.find(producto=>producto.id === numero)
+                const numberFound = this.products.find(product=>product.id === number)
                 if (numberFound){
                     return numberFound
                 }else {
@@ -45,19 +35,24 @@ const desafio = async () => {
     
         }
     
-        async getAll(){
-            const content = this.productos;
-            return content;
-        }
-    
+        async getAll(products){
+           try{
+            const content = await fs.promises.readFile(`./${this.fileName}`, products= this.products, 'utf-8')
+            return JSON.parse(content)
+           }
+           catch(err){
+            return []
+           }
+        } 
+
         async deleteById(id){
-                this.productos = this.productos.filter(producto => producto.id !== id);
-                await fs.promises.writeFile(`./${this.fileName}.txt`, JSON.stringify(this.productos, null, 2));
+                this.products = this.products.filter(product => product.id !== id);
+                await fs.promises.writeFile(`./${this.fileName}.txt`, JSON.stringify(this.products, null, 2));
         }
     
         async deleteAll(){
             try{
-                await fs.promises.writeFile(`./${this.fileName}.txt`, this.productos = [], 'utf-8')
+                await fs.promises.writeFile(`./${this.fileName}.txt`, this.products = [], 'utf-8')
                 console.log('Datos borrados')
             }
             catch(err){
@@ -67,36 +62,35 @@ const desafio = async () => {
        
     }
     
-    const producto = new Contenedor ('stock')
+    const product = new Conteiner ('stock')
     
     const obj = {
-        name:'Mouse',
+        name:"Mouse",
         price: 1000,
-        thumbnail: 'image.png'
+        thumbnail: "image.png"
     };
 
     const obj2 = {
-        name:'Teclado',
+        name: "Teclado",
         price: 2000,
-        thumbnail: 'image.png'
+        thumbnail: "image.png"
     }
 
     const obj3 = {
-        name:'Escritorio',
+        name:"Escritorio",
         price: 3000,
-        thumbnail: 'image.png'
+        thumbnail: "image.png"
     }
     
     
-    await producto.save(obj);
-    await producto.save(obj2);
-    await producto.save(obj3);
-    console.log(await producto.getById(2));
-    console.log(await producto.getAll());
-    //await producto.deleteById(3);
-    //producto.deleteAll();
-}
-desafio();
+    product.save(obj);
+    product.save(obj2);
+    product.save(obj3);
+    //console.log(product.getById(2));
+    // product.getAll();
+    //product.deleteById(3);
+    // //product.deleteAll();
 
 
-module.exports = desafio();
+
+module.exports = Conteiner
