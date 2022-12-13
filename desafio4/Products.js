@@ -37,10 +37,17 @@ class Products {
         } 
     }
 
-    renameProduct(name){
-           const newName= this.products.find((product)=> product.name === name);
-           this.products.push(newName)
-    }
+    newId(id, product) {
+        const foundProduct = this.products.find((product) => product.id === id);
+        if (foundProduct){
+          const filteredProducts = this.products.filter((product) => product.id !== id);
+          const newProduct = { id, ...product };
+          this.products = [...filteredProducts, newProduct];
+          return newProduct;
+        } else {
+          return ERROR;
+        }
+      }
     
 }
 

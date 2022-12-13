@@ -21,11 +21,12 @@ router.post("/", (req,res)=>{
     res.send(newProduct);
 });
 
-router.put("/:id", (req,res)=>{
-    const newName = req.body;
-    const name = container.renameProduct(name);
-    res.send(newName);
-});
+router.put("/:id", (req, res) => {
+    const id = req.params.id;
+    const obj = req.body;
+    const newProduct = container.newId(parseInt(id), obj);
+    res.send(newProduct);
+})
 
 router.delete("/:id", (req,res)=>{
    const id = req.params.id;
