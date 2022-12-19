@@ -1,0 +1,16 @@
+<% if(products.length > 0){ %>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <tr style="color:cadetblue;"> <th>Nombre</th> <th>Precio</th> <th>URL</th> </tr>
+            <% products.forEach((products) => {%>
+            <tr>
+                <td><%=products.name%></td>
+                <td><%=products.price%></td>
+                <td><%=products.url%></td>
+            </tr>
+            <%});%>
+        </table>
+    </div>
+<% } else{ %>
+    <h3 class="alert alert-danger">No se encontraron datos</h3>
+<% } %>
