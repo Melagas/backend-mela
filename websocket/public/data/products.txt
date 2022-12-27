@@ -1,0 +1,20 @@
+[
+  {
+    "tittle": "Mouse",
+    "price": 1200,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/feather-5/24/toggle-left-64.png",
+    "id": 1
+  },
+  {
+    "tittle": "Teclado",
+    "price": 2000,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/feather-5/24/x-square-64.png",
+    "id": 2
+  },
+  {
+    "tittle": "Computadora",
+    "price": 9000,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/multimedia-75/512/multimedia-37-512.png",
+    "id": 3
+  }
+]
