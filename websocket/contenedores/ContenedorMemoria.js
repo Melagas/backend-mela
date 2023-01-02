@@ -1,4 +1,4 @@
-class ContainerMemory {
+class ContenedorMemoria {
     constructor() {
         this.mensajes = [
             {email:'pedrito@gmail.com', text:'Hola!'}
@@ -50,4 +50,4 @@ class ContainerMemory {
     }
 }
 
-module.exports = ContainerMemory
+module.exports = ContenedorMemoria

@@ -1,19 +1,19 @@
-const express = require('express');
-const hbs = require("hbs");
-//const handlebars = require ('express-handlebars')
-//const ejs = require ("ejs")
-const Products = require('./api/Products')
-const container = new Products()
-const app = express();
+const express = require("express");
+const app = require("express")();
 const http = require("http").Server(app);
 const io = require("socket.io")(http);
+const hbs = require("hbs");
+const Products = require('./api/Products')
+const container = new Products()
+
+const port = 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({extend:true}));
-app.use(express.static('public'))
+
 app.set("view engine", "hbs");
-//app.set("view engine", "ejs");
 app.set("views", "./views"); 
+app.use(express.static("public"));
   
   let products = []
   
@@ -29,7 +29,7 @@ app.set("views", "./views");
   });
 
   app.get("/", (req, res) => {
-    res.sendFile(__dirname + 'index');
+    res.sendFile(__dirname + "/index.html");
   });
   
   const messages = [
@@ -55,12 +55,14 @@ app.set("views", "./views");
       io.emit("chat message", msg);
     });
   });
+  
+const server = http.listen(port, () => {
+    console.log(`Escuchando app en el puerto ${server.address().port}`);
+  });
 
-const PORT = 3000; 
-
-const server = app.listen(PORT, () => {
-    console.log(`Listening on port ${server.address().port}`);
-});
+  // const server = app.listen(port, () => {
+  //   console.log(`Escuchando app en el puerto ${server.address().port}`);
+  // });
 
 server.on("error", (error) => {
     console.log(`An error ocurred on server ${error.message}`);

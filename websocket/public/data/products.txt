@@ -1,20 +1,20 @@
 [
   {
-    "tittle": "Mouse",
-    "price": 1200,
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/feather-5/24/toggle-left-64.png",
+    "tittle": "Remera",
+    "price": 1500,
+    "thumbnail": "https://pimpumpills.com/home/producto/remera-cuphead/",
     "id": 1
   },
   {
-    "tittle": "Teclado",
-    "price": 2000,
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/feather-5/24/x-square-64.png",
+    "tittle": "Remera",
+    "price": 1500,
+    "thumbnail": "https://pimpumpills.com/home/producto/remera-cuphead/",
     "id": 2
   },
   {
-    "tittle": "Computadora",
-    "price": 9000,
-    "thumbnail": "https://cdn4.iconfinder.com/data/icons/multimedia-75/512/multimedia-37-512.png",
+    "tittle": "jean",
+    "price": 22.9,
+    "thumbnail": "https://www.solodeportes.com.ar/filmore.html?nosto=productcategory-nosto-1-fallback-nosto-1",
     "id": 3
   }
 ]

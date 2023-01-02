@@ -28,7 +28,7 @@ socket.on('productos', productos =>{makeHtmlTable(productos)})
 
 
 function makeHtmlTable(productos) {
-    return fetch('plantillas/table-products.hbs')
+    return fetch('plantillas/tabla-productos.hbs')
         .then(respuesta => respuesta.text())
         .then(plantilla => {
             const template = Handlebars.compile(plantilla);

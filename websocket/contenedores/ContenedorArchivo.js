@@ -1,4 +1,4 @@
-class ContainerFiles {
+class ContenedorArchivo {
 
     constructor() {
         this.productos = [
@@ -68,4 +68,4 @@ class ContainerFiles {
 
 
 
- module.exports = ContainerFiles
+ module.exports = ContenedorArchivo

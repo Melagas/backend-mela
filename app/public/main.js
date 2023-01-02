@@ -2,7 +2,7 @@ const socket = io.connect();
 const render = (data) => {
   const html = data.map((element, index) => {
     return `<div>
-    <strong>${element.author} </strong>
+    <strong>${element.mail} </strong>
     <em>${element.text}</em>
     </div> `;
   });

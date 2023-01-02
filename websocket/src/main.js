@@ -4,27 +4,27 @@ const { Server: HttpServer } = require('http')
 const { Server: Socket } = require('socket.io')
 
 
-const ContainerMemory = require('../container/containerFiles.js')
-const ContainerFiles = require('../container/containerMemory.js')
+const ContenedorMemoria = require('../contenedores/ContenedorMemoria.js')
+const ContenedorArchivo = require('../contenedores/ContenedorArchivo.js')
 
 //--------------------------------------------
 // instancio servidor, socket y api
 const app = express()
 const httpServer = new HttpServer(app)
-const io = new Socket(httpServer) 
+const io = new Socket(httpServer)
 
-const containerFiles = new ContainerFiles();
-const containerMemory = new ContainerMemory()
+const contenedorArchivos = new ContenedorArchivo();
+const contenedorMemoria = new ContenedorMemoria()
 //--------------------------------------------
 // configuro el socket
 
 io.on('connection', socket => {
     //productos
-    products = containerFiles.listarAll()
+    products = contenedorArchivos.listarAll()
     socket.emit('productos', products)
     
     socket.on('producto', datat =>{
-        containerFiles.guardar(datat)
+        contenedorArchivos.guardar(datat)
 
         io.sockets.emit('productos', products)
     })
@@ -32,12 +32,12 @@ io.on('connection', socket => {
 
     
     //mensajes
-    socket.emit('mensajes', containerMemory.listarAll())
+    socket.emit('mensajes', contenedorMemoria.listarAll())
     
     socket.on('message', data =>{
-        containerMemory.guardar(data)
+        contenedorMemoria.guardar(data)
        
-        io.sockets.emit('mensajes', containerMemory.listarAll())
+        io.sockets.emit('mensajes', contenedorMemoria.listarAll())
     })
 
     
