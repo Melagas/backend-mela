@@ -1,9 +1,10 @@
 const socket = io.connect();
+const date = Date();
 const render = (data) => {
   const html = data.map((element, index) => {
     return `<div>
-    <strong>${element.mail} </strong>
-    <em>${element.text}</em>
+    <strong style="color:blue;">${element.mail} </strong><div style="color:brown;">[${date}]</div>
+    <em style="color:green;">${element.text}</em>
     </div> `;
   });
   document.getElementById("messages").innerHTML = html;
