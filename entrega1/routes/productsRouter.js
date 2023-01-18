@@ -27,8 +27,6 @@ function onlyAdmins(req, res, next) {
     }
 }
 
-//Products
-
 routerProd.get("/", (_req,res)=>{
     const products = container.getAll();
     res.send(products);

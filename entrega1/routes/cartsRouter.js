@@ -16,20 +16,36 @@ routerCart.post('/', (req, res) => {
         res.send(newCart);
     });
 
-// routerCart.post('/:id/products',(req, res) => {
-//     const product = req.body
-//     const addProduct = cart.addProduct(product);
-//     res.send(addProduct);
-// })
+routerCart.post('/:car/products/:product',(req, res) => {
+        try {
+            const { product, car } = req.params
+            const addProduct = cart.addProduct(product, car);
+            res.send(addProduct);
+        } catch (error) {  
+            res.json({
+                error: error.message,
+                code: 400
+            })
+        }
+    })
+
+// routerCart.delete('/:car/products/:product', (req, res) => {
+//     try{
+//         const {car, product} = req.params
+//         const deleteProd = cart.deleteByIdProd(parseInt(car, product));
+//         res.send(deleteProd)
+//     }catch (error) {
+//         res.json({
+//             error: error.message,
+//             code: 400
+//         })
+//     }
+// });
 
 routerCart.delete("/:id", (req,res)=>{
     const id = req.params.id;
     const cleanCart = cart.deleteById(parseInt(id));
     res.send(cleanCart)
  });
-
-// routerCart.delete('/:id/products/:id_prod', (req, res) => {
-//     res.send()
-// })
 
 module.exports = routerCart;

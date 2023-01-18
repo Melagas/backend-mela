@@ -23,7 +23,7 @@ class Products {
         const arrayId = this.products.map(product => product.id);
         const maxId = arrayId.length === 0 ? 0 : Math.max(...arrayId);
         const id = maxId + 1;
-        const newObj = {id, ...product };
+        const newObj = {id, ...product, 'timestamp': Date() };
         this.products.push(newObj);
         return newObj;
         }
