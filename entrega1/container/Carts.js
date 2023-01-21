@@ -47,25 +47,23 @@ class Carts {
         return this.carts
         }
     
-    // deleteByIdProd(productId, carId){
-    //     const objProducts = new Products();
+    deleteByIdProd(productId, carId){
+        const objProducts = new Products();
     
-    //     const productObject = objProducts.deleteById(parseInt(productId))
+        const productObject = objProducts.getById(parseInt(productId))
     
-    //     if(!productObject.id){
-    //             return productObject
-    //         }
+        if(!productObject.id){
+                return productObject
+            }
             
-    //     this.carts.filter ((car) => {
-    //             if (car.id === parseInt(carId)){
-    //                 car.stock.push(productObject)
-    //             }
-    //         })
-                
-    //     return this.carts
-    //     }
-    
-      
+       this.carts.find ((car) => {
+           if(car.id === parseInt(carId)){
+               car.stock = car.stock.filter((product) => product.id !== parseInt(productId))
+           }
+        })
+
+        return this.carts
+        }
     
     deleteById(id){
         const deleteId = this.carts = this.carts.filter((cart) => cart.id !== id);

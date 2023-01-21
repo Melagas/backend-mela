@@ -29,18 +29,18 @@ routerCart.post('/:car/products/:product',(req, res) => {
         }
     })
 
-// routerCart.delete('/:car/products/:product', (req, res) => {
-//     try{
-//         const {car, product} = req.params
-//         const deleteProd = cart.deleteByIdProd(parseInt(car, product));
-//         res.send(deleteProd)
-//     }catch (error) {
-//         res.json({
-//             error: error.message,
-//             code: 400
-//         })
-//     }
-// });
+routerCart.delete('/:car/products/:product', (req, res) => {
+    try{
+        const {product, car} = req.params
+        const deleteProd = cart.deleteByIdProd(product, car);
+        res.send(deleteProd)
+    }catch (error) {
+        res.json({
+            error: error.message,
+            code: 400
+        })
+    }
+});
 
 routerCart.delete("/:id", (req,res)=>{
     const id = req.params.id;
