@@ -7,6 +7,10 @@ const options = knex({
         user: 'root',
         database: 'ecommerce'
     }
+    // client: 'sqlite3',
+    // connection: {
+    //     filename: './DB/mydb.sqlite'
+    // }
 });
 
 export default options;
