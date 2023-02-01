@@ -1,4 +1,5 @@
 const fs = require('fs')
+const { getMaxListeners } = require('process')
 
     class Conteiner {
         constructor (fileName,products=[],id=0){
@@ -94,3 +95,25 @@ const fs = require('fs')
 
 
 module.exports = Conteiner
+// [
+// {id:1, title:'Mouse', price:500, thumbnail:'mouse.png'},
+// {id:2, title:'Teclado', price:100, thumbnail:'teclado.png'},
+// {id:3, title:'Computadora', price:320, thumbnail:'computadora.png'},
+// {id:4, title:'Hub', price:1200, thumbnail:'hub.png'},
+// {id:5, title:'Lampara Led', price:3000, thumbnail:'lampara.png'},
+// {id:6, title:'Pad', price:4500, thumbnail:'pad.png'},
+// {id:7, title:'Escritorio', price:2200, thumbnail:'escritorio.png'},
+// {id:8, title:'Silla', price:1900, thumbnail:'silla.png'},
+// {id:9, title:'Auriculares', price:5000, thumbnail:'auriculares.png'}
+// ]
+
+// [
+//     {email:'gaston@gmail.com', text:'Hola, todo bien?'},
+//     {email:'eliseo@gmail.com', text:'Muy bien! y vos?'},
+//     {email:'gaston@gmail.com', text:'Bien! Te sumas a un partido hoy a las 20hs?'},
+//     {email:'eliseo@gmail.com', text:'Me sumo'},
+//     {email:'gaston@gmail.com', text:'Genial!'},
+//     {email:'eliseo@gmail.com', text:'Hay que llevar algun color de remera en especial?'},
+//     {email:'gaston@gmail.com', text:'Si, azul!'},
+//     {email:'eliseo@gmail.com', text:'Perfecto, nos vemos ahi!'}
+// ]

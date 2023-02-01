@@ -1,0 +1,309 @@
+use ecommerce
+'switched to db ecommerce'
+db.createCollection('mensajes')
+{ok:1}
+db.createCollection('productos')
+{ok:1}
+db.productos.insertMany([
+{id:1, title:'Mouse', price:500, thumbnail:'mouse.png'},
+{id:2, title:'Teclado', price:100, thumbnail:'teclado.png'},
+{id:3, title:'Computadora', price:320, thumbnail:'computadora.png'},
+{id:4, title:'Hub', price:1200, thumbnail:'hub.png'},
+{id:5, title:'Lampara Led', price:3000, thumbnail:'lampara.png'},
+{id:6, title:'Pad', price:4500, thumbnail:'pad.png'},
+{id:7, title:'Escritorio', price:2200, thumbnail:'escritorio.png'},
+{id:8, title:'Silla', price:1900, thumbnail:'silla.png'},
+{id:9, title:'Auriculares', price:5000, thumbnail:'auriculares.png'}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("63d833ae4590c725d3f1fb71"),
+    '1': ObjectId("63d833ae4590c725d3f1fb72"),
+    '2': ObjectId("63d833ae4590c725d3f1fb73"),
+    '3': ObjectId("63d833ae4590c725d3f1fb74"),
+    '4': ObjectId("63d833ae4590c725d3f1fb75"),
+    '5': ObjectId("63d833ae4590c725d3f1fb76"),
+    '6': ObjectId("63d833ae4590c725d3f1fb77"),
+    '7': ObjectId("63d833ae4590c725d3f1fb78"),
+    '8': ObjectId("63d833ae4590c725d3f1fb79")
+  }
+}
+db.mensajes.insertMany([
+    {email:'gaston@gmail.com', text:'Hola, todo bien?'},
+    {email:'eliseo@gmail.com', text:'Muy bien! y vos?'},
+    {email:'gaston@gmail.com', text:'Bien! Te sumas a un partido hoy a las 20hs?'},
+    {email:'eliseo@gmail.com', text:'Me sumo'},
+    {email:'gaston@gmail.com', text:'Genial!'},
+    {email:'eliseo@gmail.com', text:'Hay que llevar algun color de remera en especial?'},
+    {email:'gaston@gmail.com', text:'Si, azul!'},
+    {email:'eliseo@gmail.com', text:'Perfecto, nos vemos ahi!'}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("63d8354b4590c725d3f1fb7a"),
+    '1': ObjectId("63d8354b4590c725d3f1fb7b"),
+    '2': ObjectId("63d8354b4590c725d3f1fb7c"),
+    '3': ObjectId("63d8354b4590c725d3f1fb7d"),
+    '4': ObjectId("63d8354b4590c725d3f1fb7e"),
+    '5': ObjectId("63d8354b4590c725d3f1fb7f"),
+    '6': ObjectId("63d8354b4590c725d3f1fb80"),
+    '7': ObjectId("63d8354b4590c725d3f1fb81")
+  }
+}
+
+db.mensajes.insertOne({email:'gaston@gmail.com', text:'Abrazo'})
+{
+  acknowledged: true,
+  insertedId: ObjectId("63d835e44590c725d3f1fb82")
+}
+
+db.productos.find()
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb71"),
+  id: 1,
+  title: 'Mouse',
+  price: 500,
+  thumbnail: 'mouse.png'
+}
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb72"),
+  id: 2,
+  title: 'Teclado',
+  price: 100,
+  thumbnail: 'teclado.png'
+}
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb73"),
+  id: 3,
+  title: 'Computadora',
+  price: 320,
+  thumbnail: 'computadora.png'
+}
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb74"),
+  id: 4,
+  title: 'Hub',
+  price: 1200,
+  thumbnail: 'hub.png'
+}
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb75"),
+  id: 5,
+  title: 'Lampara Led',
+  price: 3000,
+  thumbnail: 'lampara.png'
+}
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb76"),
+  id: 6,
+  title: 'Pad',
+  price: 4500,
+  thumbnail: 'pad.png'
+}
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb77"),
+  id: 7,
+  title: 'Escritorio',
+  price: 2200,
+  thumbnail: 'escritorio.png'
+}
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb78"),
+  id: 8,
+  title: 'Silla',
+  price: 1900,
+  thumbnail: 'silla.png'
+}
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb79"),
+  id: 9,
+  title: 'Auriculares',
+  price: 5000,
+  thumbnail: 'auriculares.png'
+}
+
+db.mensajes.find()
+{
+  _id: ObjectId("63d8354b4590c725d3f1fb7a"),
+  email: 'gaston@gmail.com',
+  text: 'Hola, todo bien?'
+}
+{
+  _id: ObjectId("63d8354b4590c725d3f1fb7b"),
+  email: 'eliseo@gmail.com',
+  text: 'Muy bien! y vos?'
+}
+{
+  _id: ObjectId("63d8354b4590c725d3f1fb7c"),
+  email: 'gaston@gmail.com',
+  text: 'Bien! Te sumas a un partido hoy a las 20hs?'
+}
+{
+  _id: ObjectId("63d8354b4590c725d3f1fb7d"),
+  email: 'eliseo@gmail.com',
+  text: 'Me sumo'
+}
+{
+  _id: ObjectId("63d8354b4590c725d3f1fb7e"),
+  email: 'gaston@gmail.com',
+  text: 'Genial!'
+}
+{
+  _id: ObjectId("63d8354b4590c725d3f1fb7f"),
+  email: 'eliseo@gmail.com',
+  text: 'Hay que llevar algun color de remera en especial?'
+}
+{
+  _id: ObjectId("63d8354b4590c725d3f1fb80"),
+  email: 'gaston@gmail.com',
+  text: 'Si, azul!'
+}
+{
+  _id: ObjectId("63d8354b4590c725d3f1fb81"),
+  email: 'eliseo@gmail.com',
+  text: 'Perfecto, nos vemos ahi!'
+}
+
+{
+  _id: ObjectId("63d835e44590c725d3f1fb82"),
+  email: 'gaston@gmail.com',
+  text: 'Abrazo'
+}
+
+db.productos.insertOne({id:10, title:'Laptop', price:4850, thumbnail:'laptop.png'})
+{
+  acknowledged: true,
+  insertedId: ObjectId("63d83a3f4590c725d3f1fb83")
+}
+db.mensajes.insertOne({email:'eliseo@gmail.com', text:'Abrazo grande'})
+{
+  acknowledged: true,
+  insertedId: ObjectId("63d83a794590c725d3f1fb84")
+}
+db.productos.countDocuments()
+10
+db.mensajes.countDocuments()
+10
+
+db.productos.find({title:'Mouse'})
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb71"),
+  id: 1,
+  title: 'Mouse',
+  price: 500,
+  thumbnail: 'mouse.png'
+}
+db.mensajes.find({text: 'Genial!'})
+{
+  _id: ObjectId("63d8354b4590c725d3f1fb7e"),
+  email: 'gaston@gmail.com',
+  text: 'Genial!'
+}
+
+db.productos.find({price:{$lt:1000}})
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb71"),
+  id: 1,
+  title: 'Mouse',
+  price: 500,
+  thumbnail: 'mouse.png'
+}
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb72"),
+  id: 2,
+  title: 'Teclado',
+  price: 100,
+  thumbnail: 'teclado.png'
+}
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb73"),
+  id: 3,
+  title: 'Computadora',
+  price: 320,
+  thumbnail: 'computadora.png'
+}
+db.productos.find({$and:[{price:{$gt:1000}},{price:{$lt:3000}}]})
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb74"),
+  id: 4,
+  title: 'Hub',
+  price: 1200,
+  thumbnail: 'hub.png'
+}
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb77"),
+  id: 7,
+  title: 'Escritorio',
+  price: 2200,
+  thumbnail: 'escritorio.png'
+}
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb78"),
+  id: 8,
+  title: 'Silla',
+  price: 1900,
+  thumbnail: 'silla.png'
+}
+
+db.productos.find({price:{$gt:3000}})
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb76"),
+  id: 6,
+  title: 'Pad',
+  price: 4500,
+  thumbnail: 'pad.png'
+}
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb79"),
+  id: 9,
+  title: 'Auriculares',
+  price: 5000,
+  thumbnail: 'auriculares.png'
+}
+{
+  _id: ObjectId("63d83a3f4590c725d3f1fb83"),
+  id: 10,
+  title: 'Laptop',
+  price: 4850,
+  thumbnail: 'laptop.png'
+}
+
+db.productos.find().skip(2).limit(1).sort({price:1})
+{
+  _id: ObjectId("63d833ae4590c725d3f1fb71"),
+  id: 1,
+  title: 'Mouse',
+  price: 500,
+  thumbnail: 'mouse.png'
+}
+
+db.productos.updateMany({},{$set:{stock:100}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 10,
+  modifiedCount: 10,
+  upsertedCount: 0
+}
+
+db.productos.updateMany({price:{$gt:4000}}, {$set:{stock:0}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+
+db.productos.deleteMany({price:{$lt:1000}})
+{
+  acknowledged: true,
+  deletedCount: 3
+}
+
+use admin
+'switched to db admin'
+db.createUser({user:'lalo', pwd:'qwerty', roles:[{role:'read', db:'ecommerce'}]})
+{ ok: 1 }
