@@ -2,6 +2,14 @@ import mongoose from "mongoose";
 import * as model from './models/estudiantes.js';
 
 
+function gradeAverage(students) {
+    let sumNotas = 0
+    students.forEach(student => {
+        sumNotas += student.nota
+    })
+    console.log(`Promedio: ${(sumNotas / students.length).toFixed(2)}`)
+}
+
 async function crud(){
     try {
         //Conexion con la DB
@@ -39,8 +47,24 @@ async function crud(){
         // const estudiantesOrganized = await model.estudiantes.find({}).sort({nombre: 1})
         // console.log(estudiantesOrganized);
 
-        const estudianteYoung = await model.estudiantes.find({}).sort({edad: 1}).limit(1)
-        console.log(estudianteYoung);
+        //const estudianteYoung = await model.estudiantes.find({}).sort({edad: 1}).skip(0).limit(1);
+        //console.log(estudianteYoung);
+
+        //const sutudentsNameLastName = await model.estudiantes.find({}, {nombre:1, apellido:1, curso:1, _id:0}).sort({apellido:-1});
+        //console.log(sutudentsNameLastName);
+
+        //const betterStudent = await model.estudiantes.find({nota:10});
+        //console.log(betterStudent);
+
+        //const studentsForAvg = await model.estudiantes.find({})
+        //gradeAverage(studentsForAvg);
+
+        const studentsForAvg1A = await model.estudiantes.find({ curso: '1A' })
+        gradeAverage(studentsForAvg1A);
+
+
+
+
 
 
         //Disconect
