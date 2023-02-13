@@ -1,4 +1,4 @@
-import Products from '../container/Products.js'
+import Products from '../../../mocks/container/Products.js'
 import { generatorProduct } from '../utils/generatorProduct.js'
 
 class ApiProductsMock extends Products {
