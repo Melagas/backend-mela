@@ -5,8 +5,10 @@ var controller = {
     save: (req, res) => {
         var params = req.body
         var message = new Message()
-        message.message = params.message
-        message.from = params.from
+        //message.message = params.message
+        //message.from = params.from
+        message.author = params.author
+        message.text = params.text
         console.log(message)
         message.save((error, messageStored) =>{
             if(error || !messageStored){

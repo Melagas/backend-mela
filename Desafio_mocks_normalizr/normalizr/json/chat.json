@@ -1,0 +1,91 @@
+[{
+  "author": {
+      "id": "gaston@gmail.com",
+      "nombre": "gaston",
+      "apellido": "mela",
+      "edad": 26,
+      "alias": "Gasti",
+      "avatar": "image.png"
+  },
+  "_id": "63ed0026619d268f63d5e88a",
+  "text": "Me voy a dormir!!",
+  "__v": 0
+},
+{
+  "author": {
+      "id": "lola@gmail.com",
+      "nombre": "Lourdes",
+      "apellido": "Diaz",
+      "edad": 20,
+      "alias": "Lola",
+      "avatar": "image.png"
+  },
+  "_id": "63ecffd3619d268f63d5e888",
+  "text": "Que calor que hace!!",
+  "__v": 0
+},
+{
+  "author": {
+      "id": "lola@gmail.com",
+      "nombre": "Lourdes",
+      "apellido": "Diaz",
+      "edad": 20,
+      "alias": "Lola",
+      "avatar": "image.png"
+  },
+  "_id": "63ecffc7619d268f63d5e886",
+  "text": "Tengo hambre!!",
+  "__v": 0
+},
+{
+  "author": {
+      "id": "alvaro@gmail.com",
+      "nombre": "alvaro",
+      "apellido": "lopez",
+      "edad": 20,
+      "alias": "Alvi",
+      "avatar": "image.png"
+  },
+  "_id": "63ecff9c619d268f63d5e884",
+  "text": "Buenas noches!!",
+  "__v": 0
+},
+{
+  "author": {
+      "id": "alvaro@gmail.com",
+      "nombre": "alvaro",
+      "apellido": "lopez",
+      "edad": 20,
+      "alias": "Alvi",
+      "avatar": "image.png"
+  },
+  "_id": "63ecff90619d268f63d5e882",
+  "text": "Tengo que estudiar!!",
+  "__v": 0
+},
+{
+  "author": {
+      "id": "alvaro@gmail.com",
+      "nombre": "alvaro",
+      "apellido": "lopez",
+      "edad": 20,
+      "alias": "Alvi",
+      "avatar": "image.png"
+  },
+  "_id": "63ecfb0e619d268f63d5e880",
+  "text": "Lindo día!!",
+  "__v": 0
+},
+{
+  "author": {
+      "id": "gaston@gmail.com",
+      "nombre": "gaston",
+      "apellido": "mela",
+      "edad": 26,
+      "alias": "Gasti",
+      "avatar": "image.png"
+  },
+  "_id": "63ea9c4d16d80e472f3bd0a4",
+  "text": "Hola!!",
+  "__v": 0
+}]
