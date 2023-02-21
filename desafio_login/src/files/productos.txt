@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "mouse",
+    "price": "1500",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4TGiUE76wRdFnE2aBPP0NdG0eViyjzbUjSQ&usqp=CAU"
+  },
+  {
+    "id": 2,
+    "title": "teclado",
+    "price": 3000,
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd_slE4ElAMvJbANzrw_pFl8fawFqquvTIkA&usqp=CAU"
+  }
+]
