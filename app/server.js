@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const http = require("http").Server(app);
-const io = require("socket.io")(http);
+//const http = require("http").Server(app);
+//const io = require("socket.io")(http);
 
 app.use(express.json());
 app.use(express.urlencoded({extend:true}));
@@ -47,7 +47,7 @@ app.set("views", "./views");
   })
 
   app.get("/", (req, res) => {
-    res.sendFile(__dirname + './views/index.hbs',{messages});
+    res.sendFile(__dirname + 'index');
   });
  
   // io.on("connection", (socket) => {
